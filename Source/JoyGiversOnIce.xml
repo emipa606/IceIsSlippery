@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JoyGiverDef>
+    <defName>Skating_OnIce</defName>
+    <giverClass>JoyGiver_GoForWalk</giverClass>
+    <baseChance>1</baseChance>
+    <jobDef>Skating_OnIce</jobDef>
+    <joyKind>Meditative</joyKind>
+  </JoyGiverDef>
+</Defs>

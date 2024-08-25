@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <IIS.AppliesTo>Pawn-types that can fall on the ice</IIS.AppliesTo>
+  <IIS.Humanoids>Humanoids</IIS.Humanoids>
+  <IIS.Animals>Animals</IIS.Animals>
+  <IIS.Mechanoids>Mechanoids</IIS.Mechanoids>
+  <IIS.Entities>Entities</IIS.Entities>
+  <IIS.Skating>Pawns will skate</IIS.Skating>
+  <IIS.SkatingTT>As a joy-activiy, pawns will use icy surfaces for skating</IIS.SkatingTT>
+  <IIS.RiskOfFalling>Risk of falling: {0}</IIS.RiskOfFalling>
+  <IIS.RiskOfFallingTT>{0} chance per tick</IIS.RiskOfFallingTT>
+  <IIS.RiskOfFalling.VeryLow>Very low</IIS.RiskOfFalling.VeryLow>
+  <IIS.RiskOfFalling.Low>Low</IIS.RiskOfFalling.Low>
+  <IIS.RiskOfFalling.Default>Normal</IIS.RiskOfFalling.Default>
+  <IIS.RiskOfFalling.High>High</IIS.RiskOfFalling.High>
+  <IIS.Reset>Reset</IIS.Reset>
+  <IIS.CurrentModVersion>Installed mod-version: {0}</IIS.CurrentModVersion>
+</LanguageData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>Skating_OnIce</defName>
+    <driverClass>IceIsSlippery.JobGiver_GoSkating</driverClass>
+    <reportString>going skating.</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyGainRate>1</joyGainRate>
+    <joyKind>Meditative</joyKind>
+  </JobDef>
+</Defs>

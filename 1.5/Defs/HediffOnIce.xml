@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>Hediff_OnIce</defName>
+    <defaultLabelColor>(0.8, 0.35, 0.35)</defaultLabelColor>
+    <hediffClass>IceIsSlippery.Hediff_OnIce</hediffClass>
+    <description>Trying to keep balance on the slippery surface</description>
+    <label>slippery surface</label>
+    <stages>
+      <li>
+        <label>keeping balance</label>
+        <minSeverity>0</minSeverity>
+      </li>
+      <li>
+        <label>getting balance</label>
+        <minSeverity>0.7</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>getting up</label>
+        <minSeverity>0.9</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.8</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.5</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>fell over</label>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.2</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
