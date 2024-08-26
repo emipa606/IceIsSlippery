@@ -1,5 +1,8 @@
 # Changelog for IceIsSlippery
 
+1.5.1 - Moved slippery terrain definitions to mod-extensions to allow for easier patching
+
+
 1.5.0 - First publish
 Used DeepL to update translations for ChineseSimplified, French, German
 

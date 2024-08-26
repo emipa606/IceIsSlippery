@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/TerrainDef[defName="Ice_WaterShallow"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/TerrainDef[defName="Ice_WaterShallow" or defName="Ice_WaterDeep" or defName="Ice_Marsh"]</xpath>
+      <value>
+        <li Class="IceIsSlippery.SlipperyTerrain_ModExtension" />
+      </value>
+    </match>
+  </Operation>
+</Patch>

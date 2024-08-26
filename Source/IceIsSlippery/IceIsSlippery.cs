@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
@@ -15,54 +16,16 @@ public static class IceIsSlippery
 
     static IceIsSlippery()
     {
-        var naturesPrettySweetIce = DefDatabase<TerrainDef>.GetNamedSilentFail("TKKN_Ice");
-        if (naturesPrettySweetIce != null)
+        foreach (var terrainDef in DefDatabase<TerrainDef>.AllDefsListForReading)
         {
-            iceTerrainDefs.Add(naturesPrettySweetIce);
+            if (terrainDef.HasModExtension<SlipperyTerrain_ModExtension>())
+            {
+                iceTerrainDefs.Add(terrainDef);
+            }
         }
 
-        var stonesAndTerrainsIce = DefDatabase<TerrainDef>.GetNamedSilentFail("IceDeep");
-        if (stonesAndTerrainsIce != null)
-        {
-            iceTerrainDefs.Add(stonesAndTerrainsIce);
-        }
-
-        var rimedivalIce = DefDatabase<TerrainDef>.GetNamedSilentFail("Ice_WaterShallow");
-        if (rimedivalIce != null)
-        {
-            iceTerrainDefs.Add(rimedivalIce);
-            iceTerrainDefs.Add(TerrainDef.Named("Ice_WaterDeep"));
-            iceTerrainDefs.Add(TerrainDef.Named("Ice_Marsh"));
-        }
-
-        var permafrostIce = DefDatabase<TerrainDef>.GetNamedSilentFail("IceST");
-        if (permafrostIce != null)
-        {
-            iceTerrainDefs.Add(permafrostIce);
-            iceTerrainDefs.Add(TerrainDef.Named("IceS"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceDT"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceD"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceSMT"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceSM"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceDMT"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceDM"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceMarshT"));
-            iceTerrainDefs.Add(TerrainDef.Named("IceMarsh"));
-        }
-
-        var waterFreezesIce = DefDatabase<TerrainDef>.GetNamedSilentFail("WF_LakeIceThin");
-        if (waterFreezesIce != null)
-        {
-            iceTerrainDefs.Add(waterFreezesIce);
-            iceTerrainDefs.Add(TerrainDef.Named("WF_LakeIce"));
-            iceTerrainDefs.Add(TerrainDef.Named("WF_LakeIceThick"));
-            iceTerrainDefs.Add(TerrainDef.Named("WF_MarshIceThin"));
-            iceTerrainDefs.Add(TerrainDef.Named("WF_MarshIce"));
-            iceTerrainDefs.Add(TerrainDef.Named("WF_RiverIceThin"));
-            iceTerrainDefs.Add(TerrainDef.Named("WF_RiverIce"));
-            iceTerrainDefs.Add(TerrainDef.Named("WF_RiverIceThick"));
-        }
-
+        Log.Message(
+            $"[IceIsSlippery]: Set {iceTerrainDefs.Count} terrains as slippery.\n{string.Join("\n", iceTerrainDefs.Select(def => def.LabelCap))}");
         new Harmony("Mlie.IceIsSlippery").PatchAll(Assembly.GetExecutingAssembly());
     }
 
