@@ -8,6 +8,7 @@ namespace IceIsSlippery;
 internal class IceIsSlipperySettings : ModSettings
 {
     public bool Animals;
+    public bool CanFall = true;
     public bool Entities;
     public bool Humanoids = true;
     public bool Mechanoids;
@@ -25,6 +26,7 @@ internal class IceIsSlipperySettings : ModSettings
         Scribe_Values.Look(ref Entities, "Entities");
         Scribe_Values.Look(ref Humanoids, "Humanoids", true);
         Scribe_Values.Look(ref Skating, "Skating", true);
+        Scribe_Values.Look(ref CanFall, "CanFall", true);
         Scribe_Values.Look(ref RiskOfFalling, "RiskOfFalling", 0.0005f);
     }
 
@@ -35,6 +37,7 @@ internal class IceIsSlipperySettings : ModSettings
         Humanoids = true;
         Mechanoids = false;
         Skating = true;
+        CanFall = true;
         RiskOfFalling = 0.0005f;
     }
 }

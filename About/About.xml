@@ -36,6 +36,8 @@ Supported mods that adds ice-terrain:
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1874663469]SZ_StonesAndTerrains[/url]
 [/list]
 
+Adding more terrain as slippery only requires the adding of a mod extension via a patch. See the included patches as an example.
+
 To stop your colonists and visitors from walking on the ice I suggest building bridges and use [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1180719857][KV] Path Avoid[/url] or [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3260446812]Clean Pathfinding 2[/url] to keep them on their feet.
 
 [table]
@@ -66,5 +68,5 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 [/list]
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3317403790][img]https://img.shields.io/github/v/release/emipa606/IceIsSlippery?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url]</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.2</modVersion>
 </ModMetaData>

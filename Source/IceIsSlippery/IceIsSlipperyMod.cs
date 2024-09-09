@@ -62,11 +62,18 @@ internal class IceIsSlipperyMod : Mod
             Settings.Entities = false;
         }
 
+        listing_Standard.GapLine();
+        listing_Standard.CheckboxLabeled("IIS.CanFall".Translate(), ref Settings.CanFall);
+
         listing_Standard.Gap();
-        Settings.RiskOfFalling =
-            listing_Standard.SliderLabeled("IIS.RiskOfFalling".Translate(GetRiskString(Settings.RiskOfFalling)),
-                Settings.RiskOfFalling, 0.0001f, 0.001f,
-                tooltip: "IIS.RiskOfFallingTT".Translate(Settings.RiskOfFalling.ToStringPercent()));
+        if (Settings.CanFall)
+        {
+            Settings.RiskOfFalling =
+                listing_Standard.SliderLabeled("IIS.RiskOfFalling".Translate(GetRiskString(Settings.RiskOfFalling)),
+                    Settings.RiskOfFalling, 0.0001f, 0.001f,
+                    tooltip: "IIS.RiskOfFallingTT".Translate(Settings.RiskOfFalling.ToStringPercent()));
+        }
+
         if (listing_Standard.ButtonText("IIS.Reset".Translate(), widthPct: 0.25f))
         {
             Settings.Reset();

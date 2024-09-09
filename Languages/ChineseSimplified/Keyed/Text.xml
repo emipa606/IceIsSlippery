@@ -16,4 +16,5 @@
   <IIS.RiskOfFalling.High>高</IIS.RiskOfFalling.High>
   <IIS.Reset>重置</IIS.Reset>
   <IIS.CurrentModVersion>已安装模块版本：{0}</IIS.CurrentModVersion>
+  <IIS.CanFall>棋子可以落下</IIS.CanFall>
 </LanguageData>

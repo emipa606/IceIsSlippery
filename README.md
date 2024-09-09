@@ -20,6 +20,8 @@ Supported mods that adds ice-terrain:
 
 
 
+Adding more terrain as slippery only requires the adding of a mod extension via a patch. See the included patches as an example.
+
 To stop your colonists and visitors from walking on the ice I suggest building bridges and use [[KV] Path Avoid](https://steamcommunity.com/sharedfiles/filedetails/?id=1180719857) or [Clean Pathfinding 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3260446812) to keep them on their feet.
 
 ![Image](https://i.imgur.com/Ds0rBAD.png)

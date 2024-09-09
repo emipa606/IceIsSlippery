@@ -7,6 +7,7 @@
   <IIS.Entities>Entities</IIS.Entities>
   <IIS.Skating>Pawns will skate</IIS.Skating>
   <IIS.SkatingTT>As a joy-activiy, pawns will use icy surfaces for skating</IIS.SkatingTT>
+  <IIS.CanFall>Pawns can fall</IIS.CanFall>
   <IIS.RiskOfFalling>Risk of falling: {0}</IIS.RiskOfFalling>
   <IIS.RiskOfFallingTT>{0} chance per tick</IIS.RiskOfFallingTT>
   <IIS.RiskOfFalling.VeryLow>Very low</IIS.RiskOfFalling.VeryLow>

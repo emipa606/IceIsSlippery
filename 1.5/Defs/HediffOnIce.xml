@@ -10,6 +10,12 @@
       <li>
         <label>keeping balance</label>
         <minSeverity>0</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
       </li>
       <li>
         <label>getting balance</label>
@@ -18,10 +24,6 @@
           <li>
             <capacity>Moving</capacity>
             <offset>-0.4</offset>
-          </li>
-          <li>
-            <capacity>Manipulation</capacity>
-            <offset>-0.25</offset>
           </li>
         </capMods>
       </li>
@@ -32,14 +34,6 @@
           <li>
             <capacity>Moving</capacity>
             <offset>-0.8</offset>
-          </li>
-          <li>
-            <capacity>Manipulation</capacity>
-            <offset>-0.5</offset>
-          </li>
-          <li>
-            <capacity>Consciousness</capacity>
-            <offset>-0.2</offset>
           </li>
         </capMods>
       </li>
