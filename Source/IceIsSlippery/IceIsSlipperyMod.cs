@@ -53,6 +53,9 @@ internal class IceIsSlipperyMod : Mod
         listing_Standard.CheckboxLabeled("IIS.Humanoids".Translate(), ref Settings.Humanoids);
         listing_Standard.CheckboxLabeled("IIS.Animals".Translate(), ref Settings.Animals);
         listing_Standard.CheckboxLabeled("IIS.Mechanoids".Translate(), ref Settings.Mechanoids);
+        listing_Standard.CheckboxLabeled("IIS.Colonists".Translate(), ref Settings.Colonists);
+        listing_Standard.CheckboxLabeled("IIS.Neutrals".Translate(), ref Settings.Neutrals);
+        listing_Standard.CheckboxLabeled("IIS.Enemies".Translate(), ref Settings.Enemies);
         if (ModsConfig.AnomalyActive)
         {
             listing_Standard.CheckboxLabeled("IIS.Entities".Translate(), ref Settings.Entities);

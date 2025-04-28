@@ -5,6 +5,9 @@
   <IIS.Animals>Animals</IIS.Animals>
   <IIS.Mechanoids>Mechanoids</IIS.Mechanoids>
   <IIS.Entities>Entities</IIS.Entities>
+  <IIS.Enemies>Enemies</IIS.Enemies>
+  <IIS.Colonists>Colonists</IIS.Colonists>
+  <IIS.Neutrals>Neutrals</IIS.Neutrals>
   <IIS.Skating>Pawns will skate</IIS.Skating>
   <IIS.SkatingTT>As a joy-activiy, pawns will use icy surfaces for skating</IIS.SkatingTT>
   <IIS.CanFall>Pawns can fall</IIS.CanFall>

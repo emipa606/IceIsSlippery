@@ -14,6 +14,10 @@ public static class IceIsSlippery
 
     private static readonly Dictionary<Map, IceWatcher> iceWatchers = new Dictionary<Map, IceWatcher>();
 
+    private static readonly bool giddyUpLoaded;
+
+    private static readonly MethodInfo isMountedMethod;
+
     static IceIsSlippery()
     {
         foreach (var terrainDef in DefDatabase<TerrainDef>.AllDefsListForReading)
@@ -21,6 +25,17 @@ public static class IceIsSlippery
             if (terrainDef.HasModExtension<SlipperyTerrain_ModExtension>())
             {
                 iceTerrainDefs.Add(terrainDef);
+            }
+        }
+
+        giddyUpLoaded = DefDatabase<JobDef>.GetNamedSilentFail("Mounted") != null;
+        if (giddyUpLoaded)
+        {
+            isMountedMethod = AccessTools.Method("GiddyUp.StorageUtility:IsMounted", [typeof(Pawn)]);
+            if (isMountedMethod == null)
+            {
+                Log.Message("[IceIsSlippery]: Failed to patch for Giddy-Up");
+                giddyUpLoaded = false;
             }
         }
 
@@ -59,6 +74,17 @@ public static class IceIsSlippery
             return false;
         }
 
+        if (giddyUpLoaded && (bool)isMountedMethod.Invoke(null, [pawn]))
+        {
+            var localPawn = pawn;
+            var possibleMount = (Pawn)pawn.Position.GetThingList(pawn.Map).FirstOrDefault(thing =>
+                thing is Pawn riderPawn && riderPawn != localPawn && riderPawn.CurJobDef.defName == "Mounted");
+            if (possibleMount != null)
+            {
+                pawn = possibleMount;
+            }
+        }
+
         if (!IceIsSlipperyMod.instance.Settings.Humanoids && pawn.RaceProps.Humanlike)
         {
             return false;
@@ -75,6 +101,22 @@ public static class IceIsSlippery
         }
 
         if (!IceIsSlipperyMod.instance.Settings.Entities && pawn.RaceProps.IsAnomalyEntity)
+        {
+            return false;
+        }
+
+        if (!IceIsSlipperyMod.instance.Settings.Colonists && pawn.Faction == Faction.OfPlayer)
+        {
+            return false;
+        }
+
+        if (!IceIsSlipperyMod.instance.Settings.Neutrals && pawn.Faction != Faction.OfPlayer &&
+            !pawn.HostileTo(Faction.OfPlayer))
+        {
+            return false;
+        }
+
+        if (!IceIsSlipperyMod.instance.Settings.Enemies && pawn.HostileTo(Faction.OfPlayer))
         {
             return false;
         }

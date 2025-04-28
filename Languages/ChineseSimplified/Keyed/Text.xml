@@ -17,4 +17,7 @@
   <IIS.Reset>重置</IIS.Reset>
   <IIS.CurrentModVersion>已安装模块版本：{0}</IIS.CurrentModVersion>
   <IIS.CanFall>棋子可以落下</IIS.CanFall>
+  <IIS.Enemies>敌人</IIS.Enemies>
+  <IIS.Colonists>殖民者</IIS.Colonists>
+  <IIS.Neutrals>中性色</IIS.Neutrals>
 </LanguageData>
