@@ -15,11 +15,16 @@ public class Hediff_OnIce : HediffWithComps
             return;
         }
 
-        Severity = 0.5f;
+        Severity = 0.6f;
+
+        if (!IceIsSlipperyMod.instance.Settings.CanFall)
+        {
+            return;
+        }
 
         if (Rand.Chance(IceIsSlipperyMod.instance.Settings.RiskOfFalling))
         {
-            Severity = IceIsSlipperyMod.instance.Settings.CanFall ? 1.1f : 0.99f;
+            Severity = 1.1f;
         }
     }
 }
