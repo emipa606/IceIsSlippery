@@ -10,7 +10,7 @@ internal class IceIsSlipperyMod : Mod
     /// <summary>
     ///     The instance of the settings to be read by the mod
     /// </summary>
-    public static IceIsSlipperyMod instance;
+    public static IceIsSlipperyMod Instance;
 
     private static string currentVersion;
 
@@ -20,7 +20,7 @@ internal class IceIsSlipperyMod : Mod
     /// <param name="content"></param>
     public IceIsSlipperyMod(ModContentPack content) : base(content)
     {
-        instance = this;
+        Instance = this;
         Settings = GetSettings<IceIsSlipperySettings>();
         currentVersion = VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
@@ -46,54 +46,54 @@ internal class IceIsSlipperyMod : Mod
     /// <param name="rect"></param>
     public override void DoSettingsWindowContents(Rect rect)
     {
-        var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(rect);
-        listing_Standard.Label("IIS.AppliesTo".Translate());
-        listing_Standard.Gap();
-        listing_Standard.CheckboxLabeled("IIS.Humanoids".Translate(), ref Settings.Humanoids);
-        listing_Standard.CheckboxLabeled("IIS.Animals".Translate(), ref Settings.Animals);
-        listing_Standard.CheckboxLabeled("IIS.Mechanoids".Translate(), ref Settings.Mechanoids);
-        listing_Standard.CheckboxLabeled("IIS.Colonists".Translate(), ref Settings.Colonists);
-        listing_Standard.CheckboxLabeled("IIS.Neutrals".Translate(), ref Settings.Neutrals);
-        listing_Standard.CheckboxLabeled("IIS.Enemies".Translate(), ref Settings.Enemies);
+        var listingStandard = new Listing_Standard();
+        listingStandard.Begin(rect);
+        listingStandard.Label("IIS.AppliesTo".Translate());
+        listingStandard.Gap();
+        listingStandard.CheckboxLabeled("IIS.Humanoids".Translate(), ref Settings.Humanoids);
+        listingStandard.CheckboxLabeled("IIS.Animals".Translate(), ref Settings.Animals);
+        listingStandard.CheckboxLabeled("IIS.Mechanoids".Translate(), ref Settings.Mechanoids);
+        listingStandard.CheckboxLabeled("IIS.Colonists".Translate(), ref Settings.Colonists);
+        listingStandard.CheckboxLabeled("IIS.Neutrals".Translate(), ref Settings.Neutrals);
+        listingStandard.CheckboxLabeled("IIS.Enemies".Translate(), ref Settings.Enemies);
         if (ModsConfig.AnomalyActive)
         {
-            listing_Standard.CheckboxLabeled("IIS.Entities".Translate(), ref Settings.Entities);
+            listingStandard.CheckboxLabeled("IIS.Entities".Translate(), ref Settings.Entities);
         }
         else
         {
             Settings.Entities = false;
         }
 
-        listing_Standard.GapLine();
-        listing_Standard.CheckboxLabeled("IIS.CanFall".Translate(), ref Settings.CanFall);
+        listingStandard.GapLine();
+        listingStandard.CheckboxLabeled("IIS.CanFall".Translate(), ref Settings.CanFall);
 
-        listing_Standard.Gap();
+        listingStandard.Gap();
         if (Settings.CanFall)
         {
             Settings.RiskOfFalling =
-                listing_Standard.SliderLabeled("IIS.RiskOfFalling".Translate(GetRiskString(Settings.RiskOfFalling)),
+                listingStandard.SliderLabeled("IIS.RiskOfFalling".Translate(getRiskString(Settings.RiskOfFalling)),
                     Settings.RiskOfFalling, 0.0001f, 0.001f,
                     tooltip: "IIS.RiskOfFallingTT".Translate(Settings.RiskOfFalling.ToStringPercent()));
         }
 
-        if (listing_Standard.ButtonText("IIS.Reset".Translate(), widthPct: 0.25f))
+        if (listingStandard.ButtonText("IIS.Reset".Translate(), widthPct: 0.25f))
         {
             Settings.Reset();
         }
 
         if (currentVersion != null)
         {
-            listing_Standard.Gap();
+            listingStandard.Gap();
             GUI.contentColor = Color.gray;
-            listing_Standard.Label("IIS.CurrentModVersion".Translate(currentVersion));
+            listingStandard.Label("IIS.CurrentModVersion".Translate(currentVersion));
             GUI.contentColor = Color.white;
         }
 
-        listing_Standard.End();
+        listingStandard.End();
     }
 
-    private static string GetRiskString(float risk)
+    private static string getRiskString(float risk)
     {
         switch (risk)
         {

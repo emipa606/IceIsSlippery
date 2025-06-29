@@ -11,7 +11,7 @@ public class IceWatcher(Map map) : MapComponent(map)
     public override void FinalizeInit()
     {
         base.FinalizeInit();
-        UpdateIceCells();
+        updateIceCells();
     }
 
     public override void MapComponentTick()
@@ -21,7 +21,7 @@ public class IceWatcher(Map map) : MapComponent(map)
             return;
         }
 
-        UpdateIceCells();
+        updateIceCells();
     }
 
     public bool IsIce(Pawn pawn)
@@ -29,7 +29,7 @@ public class IceWatcher(Map map) : MapComponent(map)
         return pawn is { Spawned: true } && iceCells.Contains(pawn.Position);
     }
 
-    private void UpdateIceCells()
+    private void updateIceCells()
     {
         iceCells = map.AllCells.Where(cell => cell.GetTerrain(map).IsIce()).ToList();
     }

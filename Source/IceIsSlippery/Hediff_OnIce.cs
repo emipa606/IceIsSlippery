@@ -17,12 +17,12 @@ public class Hediff_OnIce : HediffWithComps
 
         Severity = 0.6f;
 
-        if (!IceIsSlipperyMod.instance.Settings.CanFall)
+        if (!IceIsSlipperyMod.Instance.Settings.CanFall)
         {
             return;
         }
 
-        if (Rand.Chance(IceIsSlipperyMod.instance.Settings.RiskOfFalling))
+        if (Rand.Chance(IceIsSlipperyMod.Instance.Settings.RiskOfFalling))
         {
             Severity = 1.1f;
         }

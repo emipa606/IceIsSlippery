@@ -12,7 +12,7 @@ public static class IceIsSlippery
 {
     private static readonly HashSet<TerrainDef> iceTerrainDefs = [TerrainDefOf.Ice];
 
-    private static readonly Dictionary<Map, IceWatcher> iceWatchers = new Dictionary<Map, IceWatcher>();
+    private static readonly Dictionary<Map, IceWatcher> iceWatchers = new();
 
     private static readonly bool giddyUpLoaded;
 
@@ -85,43 +85,38 @@ public static class IceIsSlippery
             }
         }
 
-        if (!IceIsSlipperyMod.instance.Settings.Humanoids && pawn.RaceProps.Humanlike)
+        if (!IceIsSlipperyMod.Instance.Settings.Humanoids && pawn.RaceProps.Humanlike)
         {
             return false;
         }
 
-        if (!IceIsSlipperyMod.instance.Settings.Animals && pawn.RaceProps.Animal)
+        if (!IceIsSlipperyMod.Instance.Settings.Animals && pawn.RaceProps.Animal)
         {
             return false;
         }
 
-        if (!IceIsSlipperyMod.instance.Settings.Mechanoids && pawn.RaceProps.IsMechanoid)
+        if (!IceIsSlipperyMod.Instance.Settings.Mechanoids && pawn.RaceProps.IsMechanoid)
         {
             return false;
         }
 
-        if (!IceIsSlipperyMod.instance.Settings.Entities && pawn.RaceProps.IsAnomalyEntity)
+        if (!IceIsSlipperyMod.Instance.Settings.Entities && pawn.RaceProps.IsAnomalyEntity)
         {
             return false;
         }
 
-        if (!IceIsSlipperyMod.instance.Settings.Colonists && pawn.Faction == Faction.OfPlayer)
+        if (!IceIsSlipperyMod.Instance.Settings.Colonists && pawn.Faction == Faction.OfPlayer)
         {
             return false;
         }
 
-        if (!IceIsSlipperyMod.instance.Settings.Neutrals && pawn.Faction != Faction.OfPlayer &&
+        if (!IceIsSlipperyMod.Instance.Settings.Neutrals && pawn.Faction != Faction.OfPlayer &&
             !pawn.HostileTo(Faction.OfPlayer))
         {
             return false;
         }
 
-        if (!IceIsSlipperyMod.instance.Settings.Enemies && pawn.HostileTo(Faction.OfPlayer))
-        {
-            return false;
-        }
-
-        return true;
+        return IceIsSlipperyMod.Instance.Settings.Enemies || !pawn.HostileTo(Faction.OfPlayer);
     }
 
     public static void VerifyHediff(this Pawn pawn, bool shouldHave)

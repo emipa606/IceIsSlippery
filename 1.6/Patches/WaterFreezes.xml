@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/TerrainDef[defName="WF_LakeIceThin"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/TerrainDef[defName="WF_LakeIceThin" or defName="WF_LakeIce" or defName="WF_LakeIceThick" or defName="WF_MarshIceThin" or defName="WF_MarshIce" or defName="WF_RiverIceThin" or defName="WF_RiverIce" or defName="WF_RiverIceThick"]</xpath>
+      <value>
+        <li Class="IceIsSlippery.SlipperyTerrain_ModExtension" />
+      </value>
+    </match>
+  </Operation>
+</Patch>

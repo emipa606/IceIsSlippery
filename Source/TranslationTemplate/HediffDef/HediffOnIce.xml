@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: slippery surface -->
+  <Hediff_OnIce.label>slippery surface</Hediff_OnIce.label>
+  <!-- EN: Trying to keep balance on the slippery surface -->
+  <Hediff_OnIce.description>Trying to keep balance on the slippery surface</Hediff_OnIce.description>
+  <!-- EN: keeping balance -->
+  <Hediff_OnIce.stages.keeping_balance.label>keeping balance</Hediff_OnIce.stages.keeping_balance.label>
+  <!-- EN: getting balance -->
+  <Hediff_OnIce.stages.getting_balance.label>getting balance</Hediff_OnIce.stages.getting_balance.label>
+  <!-- EN: getting up -->
+  <Hediff_OnIce.stages.getting_up.label>getting up</Hediff_OnIce.stages.getting_up.label>
+  <!-- EN: fell over -->
+  <Hediff_OnIce.stages.fell_over.label>fell over</Hediff_OnIce.stages.fell_over.label>
+</LanguageData>

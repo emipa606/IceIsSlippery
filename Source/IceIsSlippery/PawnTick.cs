@@ -3,7 +3,7 @@ using Verse;
 
 namespace IceIsSlippery;
 
-[HarmonyPatch(typeof(Pawn), nameof(Pawn.Tick))]
+[HarmonyPatch(typeof(Pawn), "Tick")]
 public static class PawnTick
 {
     public static void Postfix(Pawn __instance)
